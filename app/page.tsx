@@ -52,7 +52,7 @@ export default function Home() {
       </div>
 
       {loading ? (
-        <div className="flex justify-center items-center h-64">
+        <div className="flex justify-center items-center h-64" role="status" aria-label="Loading characters">
           <Loader2 className="h-8 w-8 animate-spin" />
         </div>
       ) : (
