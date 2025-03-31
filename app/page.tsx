@@ -44,10 +44,10 @@ export default function Home() {
   const filteredStaff = preferredHouse ? staff.filter((character) => character.house === preferredHouse) : staff
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-center mb-8 font-serif">Mischief Managed</h1>
+    <main className="container mx-auto px-4 py-4 sm:py-8">
+      <h1 className="text-3xl sm:text-4xl font-bold text-center mb-4 sm:mb-8 font-serif">Mischief Managed</h1>
 
-      <div className="mb-8">
+      <div className="mb-4 sm:mb-8">
         <HouseSelector />
       </div>
 
@@ -57,14 +57,14 @@ export default function Home() {
         </div>
       ) : (
         <Tabs defaultValue="all" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 mb-8">
-            <TabsTrigger value="all">All Characters ({filteredCharacters.length})</TabsTrigger>
-            <TabsTrigger value="students">Students ({filteredStudents.length})</TabsTrigger>
-            <TabsTrigger value="staff">Staff ({filteredStaff.length})</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-3 mb-4 sm:mb-8 overflow-x-auto">
+            <TabsTrigger value="all" className="text-sm sm:text-base">All ({filteredCharacters.length})</TabsTrigger>
+            <TabsTrigger value="students" className="text-sm sm:text-base">Students ({filteredStudents.length})</TabsTrigger>
+            <TabsTrigger value="staff" className="text-sm sm:text-base">Staff ({filteredStaff.length})</TabsTrigger>
           </TabsList>
 
           <TabsContent value="all" className="mt-0">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
               {filteredCharacters.map((character) => (
                 <CharacterCard key={character.id} character={character} />
               ))}
@@ -72,7 +72,7 @@ export default function Home() {
           </TabsContent>
 
           <TabsContent value="students" className="mt-0">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
               {filteredStudents.map((character) => (
                 <CharacterCard key={character.id} character={character} />
               ))}
@@ -80,7 +80,7 @@ export default function Home() {
           </TabsContent>
 
           <TabsContent value="staff" className="mt-0">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
               {filteredStaff.map((character) => (
                 <CharacterCard key={character.id} character={character} />
               ))}

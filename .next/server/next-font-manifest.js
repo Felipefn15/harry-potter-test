@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/felipe/Desktop/Projects/harry-potter-test/app/layout\":[\"static/media/a34f9d1faa5f3315-s.p.woff2\",\"static/media/3a8dc5763a8ae4b2-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

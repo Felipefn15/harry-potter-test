@@ -19,7 +19,17 @@ const lora = Lora({
 export const metadata: Metadata = {
   title: "Harry Potter - Mischief Managed",
   description: "Explore the wizarding world of Harry Potter",
-    generator: 'v0.dev'
+  generator: 'v0.dev',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: '#0f172a' }
+  ],
 }
 
 export default function RootLayout({
@@ -28,8 +38,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${lora.variable} font-sans`}>
+    <html lang="en" className="h-full">
+      <body className={`${inter.variable} ${lora.variable} font-sans min-h-full antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <HouseProvider>
             <FavoritesProvider>{children}</FavoritesProvider>
